@@ -1,0 +1,167 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\a6\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|solutionrelative:a6\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\a6\\global.asax||{4D30FDB3-AB3E-4810-B6F2-64627BCCA384}",
+      "RelativeMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|solutionrelative:a6\\global.asax||{4D30FDB3-AB3E-4810-B6F2-64627BCCA384}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\a6\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|solutionrelative:a6\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D76763C6-74B5-45A6-990D-B72A67B21314}|EncDec\\EncDec.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\encdec\\encryptiondecryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D76763C6-74B5-45A6-990D-B72A67B21314}|EncDec\\EncDec.csproj|solutionrelative:encdec\\encryptiondecryption.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\a6\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|solutionrelative:a6\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\a6\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|solutionrelative:a6\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|c:\\users\\rayal\\onedrive\\desktop\\cse445\\cse445_project5\\a6\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED767EFB-BEB3-4FAB-BE40-D695567EC09C}|A6\\A6.csproj|solutionrelative:a6\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 791,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 363,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "A6\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Default.aspx.cs",
+              "RelativeToolTip": "A6\\Default.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:16:30.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Global.asax",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Global.asax",
+              "RelativeDocumentMoniker": "A6\\Global.asax",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Global.asax",
+              "RelativeToolTip": "A6\\Global.asax",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000179|",
+              "WhenOpened": "2024-04-07T03:12:26.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Global.asax.cs",
+              "RelativeDocumentMoniker": "A6\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Global.asax.cs",
+              "RelativeToolTip": "A6\\Global.asax.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:12:21.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EncryptionDecryption.cs",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\EncDec\\EncryptionDecryption.cs",
+              "RelativeDocumentMoniker": "EncDec\\EncryptionDecryption.cs",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\EncDec\\EncryptionDecryption.cs",
+              "RelativeToolTip": "EncDec\\EncryptionDecryption.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T03:00:25.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\login.aspx.cs",
+              "RelativeDocumentMoniker": "A6\\login.aspx.cs",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\login.aspx.cs",
+              "RelativeToolTip": "A6\\login.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-07T02:58:13.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "login.aspx",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\login.aspx",
+              "RelativeDocumentMoniker": "A6\\login.aspx",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\login.aspx",
+              "RelativeToolTip": "A6\\login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-07T02:56:46.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Default.aspx",
+              "RelativeDocumentMoniker": "A6\\Default.aspx",
+              "ToolTip": "C:\\Users\\rayal\\OneDrive\\Desktop\\CSE445\\CSE445_Project5\\A6\\Default.aspx",
+              "RelativeToolTip": "A6\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-04-07T02:51:06.179Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 99,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

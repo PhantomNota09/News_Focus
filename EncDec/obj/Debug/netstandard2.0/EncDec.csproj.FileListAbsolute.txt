@@ -1,0 +1,9 @@
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\bin\Debug\netstandard2.0\EncDec.deps.json
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\bin\Debug\netstandard2.0\EncDec.dll
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\bin\Debug\netstandard2.0\EncDec.pdb
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\obj\Debug\netstandard2.0\EncDec.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\obj\Debug\netstandard2.0\EncDec.AssemblyInfoInputs.cache
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\obj\Debug\netstandard2.0\EncDec.AssemblyInfo.cs
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\obj\Debug\netstandard2.0\EncDec.csproj.CoreCompileInputs.cache
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\obj\Debug\netstandard2.0\EncDec.dll
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\EncDec\obj\Debug\netstandard2.0\EncDec.pdb
