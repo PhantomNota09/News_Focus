@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service Directory</title>
+    <style>
+        /* Add any additional styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+            border: solid;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #8AC7DB;
+            color: black;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <h3 style="color: red;">
+        Note:
+    </h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4" style="text-align: center; font-size: 20px;">Application and Components Summary Table</th>
+            </tr>
+
+            <tr>
+                <th colspan="4"> The application is deployed at: <a href="http://webstrar114.fulton.asu.edu/index.html">http://webstrar114.fulton.asu.edu/index.html</a></th>
+            </tr>
+
+            <tr>
+                <th colspan="4">
+                    Percentage of contribution: Surya Rayala: 50%, Katherine Tinlin: 50%
+                </th>
+            </tr>
+
+            <tr>
+                <th style="width: 10%" ;>Provider Name</th>
+                <th>Page and component type, e.g., aspx, DLL, SVC, etc.</th>
+                <th>Component description: What does the component do? What are input/parameter and output/return value?</th>
+                <th>Actual resources and methods used to implement the component and where this component is used.</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Surya Rayala</td>
+                <td>XML file manipulation: Manages member and staff user data storage and retrieval</td>
+                <td>Manage member/staff credentials, facilitate user search for existing members/staff</td>
+                <td>Developed C# code for XML file manipulation to store and retrieve user credentials</td>
+            </tr>
+
+            <tr>
+                <td>Surya Rayala</td>
+                <td>Member Pages Signup/Login</td>
+                <td>Create an Account allows users to create a new account. Handles member sign-up, encrypts passwords, saves user data in XML, Returns a boolean and gives a response accordingly to inputs</td>
+                <td>System.Web, System.IO, System.Security.Cryptography, System.Xml, wrote own code for creating an account</td>
+            </tr>
+
+            <tr>
+                <td>Surya Rayala</td>
+                <td>DLL encryption/decryption</td>
+                <td>The component provides encryption and decryption functionalities for strings using Base64 encoding. Input: string, Output: encrypted/decrypted string</td>
+                <td>Used library class and local component to implement this library function. It is used in the saving data into XML file</td>
+            </tr>
+
+            <tr>
+                <td>Surya Rayala</td>
+                <td>aspx page and server control</td>
+                <td>The public Default page that call and link all other pages</td>
+                <td>GUI design and C# code behind GUI</td>
+            </tr>
+
+            <tr>
+                <td>Surya Rayala</td>
+                <td>News Focus service </td>
+                <td>Uses News API to find all the URLs related to the provided topics and returns all news URLs related to provided topics<br>Input: string[] <br>Output: string[]</td>
+                <td>News API, RestSharp, Newtonsoft.Json</td>
+            </tr>
+
+            <tr>
+                <td>Katherine Tinlin</td>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+            </tr>
+
+            <tr>
+                <td>Katherine Tinlin</td>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+            </tr>
+
+            <tr>
+                <td>Katherine Tinlin</td>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+            </tr>
+
+            <tr>
+                <td>Katherine Tinlin</td>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+            </tr>
+
+            <tr>
+                <td>Katherine Tinlin</td>
+                <td>   </td>
+                <td>   </td>
+                <td>   </td>
+            </tr>
+            <!-- Add more rows for other services -->
+        </tbody>
+    </table>
+</body>
+</html>

@@ -9,6 +9,9 @@
                         <h5 class="card-title text-center mb-4">Welcome Staff Members</h5>
                         <p class="text-center">You have successfully logged in to the Staff Dashboard.</p>
                         <!-- Add any additional content or features for the staff dashboard here -->
+                        <div class="text-center">
+                            <asp:Button ID="LogoutButton" runat="server" Text="Logout" CssClass="btn btn-danger" OnClick="LogoutButton_Click" />
+                        </div>
                     </div>
                 </div>
             </div>

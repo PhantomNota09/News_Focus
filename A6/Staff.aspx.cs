@@ -9,15 +9,34 @@ namespace A6
 {
     public partial class Staff : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            // Check if the user is authenticated as staff
+            if (!IsPostBack && Session["IsStaffAuthenticated"] == null)
+            {
+                MessageLabel.Text = "Please login First";
+            }
+        }
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            string username = UsernameTextBox.Text;
-            string password = PasswordTextBox.Text;
+            string username = UsernameTextBox.Text.Trim();
+            string password = PasswordTextBox.Text.Trim();
+
+            // Check if both username and password are provided
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageLabel.Text = "Please enter both username and password.";
+                MessageLabel.Visible = true;
+                return;
+            }
 
             // Check username and password against stored credentials
             if (AuthenticateUser(username, password))
             {
-                // Redirect to staff dashboard or any other page after successful login
+                // Set session variable to indicate staff authentication
+                Session["IsStaffAuthenticated"] = true;
+
+                // Redirect to staff dashboard after successful login
                 Response.Redirect("~/StaffDashboard.aspx");
             }
             else
@@ -29,37 +48,74 @@ namespace A6
 
         protected void SignUpButton_Click(object sender, EventArgs e)
         {
-            string newUsername = NewUsernameTextBox.Text;
-            string newPassword = NewPasswordTextBox.Text;
-            string confirmNewPassword = ConfirmNewPasswordTextBox.Text;
-
-            // Check if passwords match
-            if (newPassword != confirmNewPassword)
+            // Check if the user is authenticated as staff
+            if (Session["IsStaffAuthenticated"] != null && (bool)Session["IsStaffAuthenticated"])
             {
-                MessageLabel.Text = "Passwords do not match.";
-                MessageLabel.Visible = true;
-                return;
-            }
+                string newUsername = NewUsernameTextBox.Text;
+                string newPassword = NewPasswordTextBox.Text;
+                string confirmNewPassword = ConfirmNewPasswordTextBox.Text;
 
-            // Create new staff account
-            if (CreateStaff(newUsername, newPassword))
-            {
-                // Redirect to staff dashboard or any other page after successful sign up
-                Response.Redirect("~/StaffDashboard.aspx");
+                // Check if passwords match
+                if (newPassword != confirmNewPassword)
+                {
+                    MessageLabel.Text = "Passwords do not match.";
+                    MessageLabel.Visible = true;
+                    return;
+                }
+
+                // Create new staff account
+                if (CreateStaff(newUsername, newPassword))
+                {
+                    // Redirect to staff dashboard after successful sign up
+                    Response.Redirect("~/StaffDashboard.aspx");
+                }
+                else
+                {
+                    MessageLabel.Text = "Failed to create staff account.";
+                    MessageLabel.Visible = true;
+                }
             }
             else
             {
-                MessageLabel.Text = "Failed to create staff account.";
+                MessageLabel.Text = "You need to login as staff first.";
                 MessageLabel.Visible = true;
             }
         }
-
         private bool AuthenticateUser(string username, string password)
         {
-            // Perform authentication logic here
-            // You can use your existing logic for checking credentials
-            // For demonstration, let's assume authentication is successful
-            return true;
+            try
+            {
+                // Load the XML document
+                string xmlFilePath = Server.MapPath("~/App_Data/staff.xml");
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(xmlFilePath);
+
+                // Find the member node with the provided username
+                XmlNode memberNode = xmlDoc.SelectSingleNode("//Member[Username='" + username + "']");
+                if (memberNode != null)
+                {
+                    // Get the password stored for this member
+                    string storedPassword = memberNode.SelectSingleNode("Password").InnerText;
+
+                    // Create an instance of EncryptionDecryption
+                    EncryptionDecryption encryptionDecryption = new EncryptionDecryption();
+
+                    // Decrypt the stored password using the instance
+                    string decryptedPassword = encryptionDecryption.Decrypt(storedPassword);
+
+                    // Compare the decrypted stored password with the provided password
+                    if (decryptedPassword == password)
+                    {
+                        return true; // Authentication successful
+                    }
+                }
+                return false; // Authentication failed
+            }
+            catch (Exception ex)
+            {
+                // Log or handle the exception appropriately
+                throw new Exception("Authentication error: " + ex.Message);
+            }
         }
 
         private bool CreateStaff(string username, string password)

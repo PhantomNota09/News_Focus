@@ -9,5 +9,13 @@ namespace A6
         {
 
         }
+
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            // Clear the session variable indicating staff authentication
+            Session["IsStaffAuthenticated"] = null;
+            // Redirect to the login page after logout
+            Response.Redirect("~/Default.aspx");
+        }
     }
 }
