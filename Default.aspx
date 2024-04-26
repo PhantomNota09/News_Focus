@@ -73,6 +73,21 @@
                 </div>
             </div>
         </div>
+        <div class="row service-container">
+            <div class="col-md-6">
+                <div class="service-card">
+                    <h2 class="service-title">Top Ten Content Words</h2>
+                    <p class="service-description">
+                        Top Ten Content Words is a service that removes stop words from news text and returns the top ten most used content words, sorted from most to least used, separated by commas<br />
+                        Returns an array of most used content words<br />
+                        Localhost URL of the service: http://webstrar114.fulton.asu.edu/page0/Service3.svc <br />
+                        Method Name: topTen(string pageContents)<br />
+                        Input: string<br />
+                        Output: array of string (top ten most used content words)
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <div class="button-container">
             <asp:Button ID="Button1" runat="server" OnClick="memberButtonClick" Text="Member Page" CssClass="btn btn-primary" />

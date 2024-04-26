@@ -85,12 +85,27 @@ namespace A6
             Label2.Text = WordFilter(siteText).ToString();
         }
 
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string siteText = TextBox4.Text;
+            string[] ans = topTen(siteText);
+            string output = ans[0];
+
+            for (int i = 1; i < 10; i++)
+            {
+                output += ", " + ans[i];
+            }
+
+            Label3.Text = output;
+        }
+
         public string WordFilter(string siteText)
         {
 
             string[] siteParse = siteText.Split(' ');
-            string[] stopWords = { "a", "A", "an", "An", "and", "And", "are", "Are", "as", "As", "at", "At", "be", "Be", "but", "But", "by", "By", "for", "For", "if", "If", "in", "In", "into", "Into", "is", "Is", "it", "It", "no", "No", "not", "Not", "of", "Of", "or", "Or", "such", "Such", "that", "That", "the", "The", "their", "Their", "then", "Then", "there", "There", "these", "These", "they", "They", "this", "This", "to", "To", "was", "Was", "will", "Will", "with", "With"};
+            string[] stopWords = { "a", "A", "an", "An", "and", "And", "are", "Are", "as", "As", "at", "At", "be", "Be", "but", "But", "by", "By", "for", "For", "if", "If", "in", "In", "into", "Into", "is", "Is", "it", "It", "its", "Its", "no", "No", "not", "Not", "of", "Of", "or", "Or", "such", "Such", "that", "That", "the", "The", "their", "Their", "then", "Then", "there", "There", "these", "These", "they", "They", "this", "This", "to", "To", "was", "Was", "will", "Will", "with", "With" };
             string[] htmlSymbols = { "<", ">", "=" };
+            char[] trimChars = { ',', '.' };
 
             for (int i = 0; i < siteParse.Length; i++)
             {
@@ -100,6 +115,11 @@ namespace A6
                     siteParse[i] = " ";
                 }
                 isHTML = false;
+            }
+
+            for (int i = 0; i < siteParse.Length; i++)
+            {
+               siteParse[i] = siteParse[i].TrimEnd(trimChars);
             }
 
             for (int i = 0; i < siteParse.Length; i++)
@@ -123,6 +143,39 @@ namespace A6
             }
 
             return filterString;
+        }
+
+        public string[] topTen(string pageContents)
+        {
+
+            string filteredString = WordFilter(pageContents);
+
+            //then, need to figure out how to analyze top 10 words from string 
+            string[] filteredArray = filteredString.Split(' ');
+
+            Dictionary<string, int> wordCount = new Dictionary<string, int>();
+            foreach (string word in filteredArray)
+            {
+                if (!wordCount.ContainsKey(word))
+                    wordCount.Add(word, 1);
+                else wordCount[word]++;
+            }
+
+            var sortedContent = wordCount.OrderByDescending(x => x.Value);
+
+            string[] topTen = new string[10];
+            int i = 0;
+
+            foreach (var pair in sortedContent)
+            {
+                if (i < 10)
+                {
+                    topTen[i] = pair.Key;
+                }
+                i++;
+            }
+
+            return topTen;
         }
     }
 }
