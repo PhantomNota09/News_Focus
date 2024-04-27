@@ -1,5 +1,7 @@
 ﻿using EncDec;
 using System;
+using System.Drawing.Imaging;
+using System.Drawing;
 using System.Web;
 using System.Web.Security;
 using System.Xml;
@@ -10,7 +12,11 @@ namespace A6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // Check if the member is already authenticated, redirect to NewsFocus page
+            if (Session["IsMemberAuthenticated"] != null && (bool)Session["IsMemberAuthenticated"])
+            {
+                Response.Redirect("~/NewsFocus.aspx");
+            }
         }
 
         protected void LoginButton_Click(object sender, EventArgs e)
@@ -23,9 +29,30 @@ namespace A6
 
                 if (AuthenticateUser(username, password))
                 {
-                    // Redirect to the NewsFocus page upon successful login
-                    FormsAuthentication.RedirectFromLoginPage(username, false);
-                    Response.Redirect("~/NewsFocus.aspx"); // Redirect to the NewsFocus page
+                    string captchaInput = Request.Form["txtCaptcha"];
+                    string sessionCaptcha = Session["CaptchaCode"] as string;
+
+                    if (captchaInput != null && sessionCaptcha != null && captchaInput.Equals(sessionCaptcha, StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageLabel.Text = "CAPTCHA validation successful!";
+                        // Set session variable to indicate member authentication
+                        Session["IsMemberAuthenticated"] = true;
+
+                        // Set cookie containing user profile information
+                        HttpCookie userProfileCookie = new HttpCookie("UserProfile");
+                        userProfileCookie["Username"] = username; // Store username
+                        userProfileCookie.Expires = DateTime.Now.AddDays(1); // Set expiration time
+                        Response.Cookies.Add(userProfileCookie); // Add cookie to the response
+
+                        // Redirect to the NewsFocus page after successful login
+                        Response.Redirect("~/NewsFocus.aspx");
+                    }
+                    else
+                    {
+                        MessageLabel.Text = "CAPTCHA verification failed. Please try again.";
+                        // Generate a new CAPTCHA code for security
+                        Session["CaptchaCode"] = GenerateRandomCode();
+                    }
                 }
                 else
                 {
@@ -72,14 +99,33 @@ namespace A6
                     {
                         return true; // Authentication successful
                     }
+                    else
+                    {
+                        throw new Exception("Incorrect password.");
+                    }
                 }
-                return false; // Authentication failed
+                else
+                {
+                    throw new Exception("Username not found.");
+                }
             }
             catch (Exception ex)
             {
                 // Log or handle the exception appropriately
                 throw new Exception("Authentication error: " + ex.Message);
             }
+        }
+
+        private string GenerateRandomCode()
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            char[] captchaChars = new char[6];
+            for (int i = 0; i < 6; i++)
+            {
+                captchaChars[i] = chars[random.Next(chars.Length)];
+            }
+            return new string(captchaChars);
         }
     }
 }

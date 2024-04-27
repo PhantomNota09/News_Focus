@@ -21,14 +21,26 @@
                                 <asp:TextBox ID="PasswordTextBox" runat="server" TextMode="Password" CssClass="form-control" placeholder="Enter your password"></asp:TextBox>
                             </div>
                         </div>
-                                                <br />
+                        <br />
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-6 text-center">
+                                <h5>CAPTCHA</h5>
+                                <img src="Captcha.aspx" alt="CAPTCHA Image" style="width: 100%; max-width: 300px;" />
+                                <br />
+                                <label for="txtCaptcha">Enter CAPTCHA:</label>
+                                <input type="text" id="txtCaptcha" name="txtCaptcha" class="form-control" style="width: 100%; max-width: 300px; margin: 0 auto;" />
+                                <asp:Label ID="lblResult" runat="server" EnableViewState="false"></asp:Label>
+                            </div>
+                        </div>
+                        <br />
                         <div class="form-group row justify-content-center">
                             <div class="col-sm-6 text-center">
                                 <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-primary btn-block" Text="Login" OnClick="LoginButton_Click" />
                             </div>
                         </div>
 
-                        <p class="text-center mt-3">Don't have login details? <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/memberSignUp.aspx">Sign Up here</asp:HyperLink>.</p>
+                        <p class="text-center mt-3">Don't have login details?
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/memberSignUp.aspx">Sign Up here</asp:HyperLink>.</p>
                     </div>
                 </div>
             </div>

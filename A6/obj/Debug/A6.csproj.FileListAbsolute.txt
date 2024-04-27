@@ -1,3 +1,5 @@
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.csproj.AssemblyReference.cache
+C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.csproj.CoreCompileInputs.cache
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\A6.dll.config
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\A6.dll
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\A6.pdb
@@ -68,8 +70,6 @@ C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\Newtonsoft.Json.xm
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\Antlr3.Runtime.pdb
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.csproj.AssemblyReference.cache
-C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.csproj.CoreCompileInputs.cache
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.csproj.CopyComplete
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.dll
 C:\Users\rayal\OneDrive\Desktop\CSE445\CSE445_Project5\A6\obj\Debug\A6.pdb

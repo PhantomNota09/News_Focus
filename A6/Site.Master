@@ -46,7 +46,7 @@
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Member">Member</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/memberLogin">Member</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/Staff.aspx">Staff</a></li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@
             <hr />
             <footer class="text-center">
                 <div class="container">
-                    <p>&copy; <%: DateTime.Now.Year %> - Surya Rayala</p>
+                    <p>&copy; <%: DateTime.Now.Year %> - Surya Rayala, Katherine Tinlin</p>
                 </div>
             </footer>
         </div>

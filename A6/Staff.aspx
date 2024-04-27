@@ -20,38 +20,25 @@
                                 <asp:TextBox ID="PasswordTextBox" runat="server" TextMode="Password" CssClass="form-control" placeholder="Enter your password"></asp:TextBox>
                             </div>
                         </div>
+                        <br>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-6 text-center">
+                                <h5>CAPTCHA</h5>
+                                <img src="Captcha.aspx" alt="CAPTCHA Image" style="width: 100%; max-width: 300px;" />
+                                <br />
+                                <label for="txtCaptcha">Enter CAPTCHA:</label>
+                                <input type="text" id="txtCaptcha" name="txtCaptcha" class="form-control" style="width: 100%; max-width: 300px; margin: 0 auto;" />
+                                <asp:Label ID="lblResult" runat="server" EnableViewState="false"></asp:Label>
+                            </div>
+                        </div>
+                        <br />
                         <br />
                         <div class="form-group row justify-content-center">
                             <div class="col-sm-6 text-center">
                                 <asp:Button ID="LoginButton" runat="server" CssClass="btn btn-primary btn-block mb-3" Text="Login" OnClick="LoginButton_Click" />
                             </div>
                         </div>
-                        <hr />
-                        <h5 class="card-title text-center mb-4">New Staff Sign Up</h5>
-                        <div class="form-group row justify-content-center">
-                            <label for="NewUsernameTextBox" class="col-sm-3 col-form-label text-right">New Username:</label>
-                            <div class="col-sm-5">
-                                <asp:TextBox ID="NewUsernameTextBox" runat="server" CssClass="form-control" placeholder="Enter new username"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group row justify-content-center">
-                            <label for="NewPasswordTextBox" class="col-sm-3 col-form-label text-right">Password:</label>
-                            <div class="col-sm-5">
-                                <asp:TextBox ID="NewPasswordTextBox" runat="server" TextMode="Password" CssClass="form-control" placeholder="Enter password"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="form-group row justify-content-center">
-                            <label for="ConfirmNewPasswordTextBox" class="col-sm-3 col-form-label text-right">Confirm Password:</label>
-                            <div class="col-sm-5">
-                                <asp:TextBox ID="ConfirmNewPasswordTextBox" runat="server" TextMode="Password" CssClass="form-control" placeholder="Confirm password"></asp:TextBox>
-                            </div>
-                        </div>
-                        <br />
-                        <div class="form-group row justify-content-center">
-                            <div class="col-sm-6 text-center">
-                                <asp:Button ID="SignUpButton" runat="server" CssClass="btn btn-success btn-block" Text="Sign Up" OnClick="SignUpButton_Click" />
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

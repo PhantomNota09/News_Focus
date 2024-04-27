@@ -4,6 +4,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace A6
 {
@@ -11,12 +12,12 @@ namespace A6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if the user is authenticated as staff
-            if (!IsPostBack && Session["IsStaffAuthenticated"] == null)
+            if (Session["IsStaffAuthenticated"] != null && (bool)Session["IsStaffAuthenticated"])
             {
-                MessageLabel.Text = "Please login First";
+                Response.Redirect("~/StaffDashboard.aspx");
             }
         }
+
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             string username = UsernameTextBox.Text.Trim();
@@ -33,11 +34,29 @@ namespace A6
             // Check username and password against stored credentials
             if (AuthenticateUser(username, password))
             {
-                // Set session variable to indicate staff authentication
-                Session["IsStaffAuthenticated"] = true;
+                string captchaInput = Request.Form["txtCaptcha"];
+                string sessionCaptcha = Session["CaptchaCode"] as string;
 
-                // Redirect to staff dashboard after successful login
-                Response.Redirect("~/StaffDashboard.aspx");
+                if (captchaInput != null && sessionCaptcha != null && captchaInput.Equals(sessionCaptcha, StringComparison.OrdinalIgnoreCase))
+                {
+                    MessageLabel.Text = "CAPTCHA validation successful!";
+                    // Set session variable to indicate staff authentication
+                    Session["IsStaffAuthenticated"] = true;
+
+                    HttpCookie staffCookie = new HttpCookie("StaffUsername");
+                    staffCookie["Username"] = username; // Store username
+                    staffCookie.Expires = DateTime.Now.AddDays(1); // Set expiration time
+                    Response.Cookies.Add(staffCookie); // Add cookie to the response
+
+                    // Redirect to staff dashboard after successful login
+                    Response.Redirect("~/StaffDashboard.aspx");
+                }
+                else
+                {
+                    MessageLabel.Text = "CAPTCHA verification failed. Please try again.";
+                    // Generate a new CAPTCHA code for security
+                    Session["CaptchaCode"] = GenerateRandomCode();
+                }
             }
             else
             {
@@ -46,41 +65,7 @@ namespace A6
             }
         }
 
-        protected void SignUpButton_Click(object sender, EventArgs e)
-        {
-            // Check if the user is authenticated as staff
-            if (Session["IsStaffAuthenticated"] != null && (bool)Session["IsStaffAuthenticated"])
-            {
-                string newUsername = NewUsernameTextBox.Text;
-                string newPassword = NewPasswordTextBox.Text;
-                string confirmNewPassword = ConfirmNewPasswordTextBox.Text;
-
-                // Check if passwords match
-                if (newPassword != confirmNewPassword)
-                {
-                    MessageLabel.Text = "Passwords do not match.";
-                    MessageLabel.Visible = true;
-                    return;
-                }
-
-                // Create new staff account
-                if (CreateStaff(newUsername, newPassword))
-                {
-                    // Redirect to staff dashboard after successful sign up
-                    Response.Redirect("~/StaffDashboard.aspx");
-                }
-                else
-                {
-                    MessageLabel.Text = "Failed to create staff account.";
-                    MessageLabel.Visible = true;
-                }
-            }
-            else
-            {
-                MessageLabel.Text = "You need to login as staff first.";
-                MessageLabel.Visible = true;
-            }
-        }
+        
         private bool AuthenticateUser(string username, string password)
         {
             try
@@ -118,63 +103,17 @@ namespace A6
             }
         }
 
-        private bool CreateStaff(string username, string password)
+        
+        private string GenerateRandomCode()
         {
-            try
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            char[] captchaChars = new char[6];
+            for (int i = 0; i < 6; i++)
             {
-                string filePath = Server.MapPath("~/App_Data/staff.xml");
-
-                // Check if file exists, if not, create it with root element
-                if (!File.Exists(filePath))
-                {
-                    // Create XML file with root element if it doesn't exist
-                    using (XmlWriter writer = XmlWriter.Create(filePath))
-                    {
-                        writer.WriteStartDocument();
-                        writer.WriteStartElement("Staff");
-                        writer.WriteEndElement();
-                        writer.WriteEndDocument();
-                    }
-                }
-
-                // Check if username already exists
-                XmlDocument doc = new XmlDocument();
-                doc.Load(filePath);
-                XmlNodeList users = doc.SelectNodes("//Staff/Member");
-                foreach (XmlNode user in users)
-                {
-                    string existingUsername = user.SelectSingleNode("Username").InnerText;
-                    if (existingUsername == username)
-                    {
-                        MessageLabel.Text = "Username already exists.";
-                        MessageLabel.Visible = true;
-                        return false;
-                    }
-                }
-
-                // Encrypt password before storing
-                EncryptionDecryption encryptionDecryption = new EncryptionDecryption();
-                string encryptedPassword = encryptionDecryption.Encrypt(password);
-
-                // Add new staff member to XML file
-                XmlNode root = doc.SelectSingleNode("//Staff");
-                XmlElement member = doc.CreateElement("Member");
-                XmlElement userNode = doc.CreateElement("Username");
-                userNode.InnerText = username;
-                XmlElement passNode = doc.CreateElement("Password");
-                passNode.InnerText = encryptedPassword;
-                member.AppendChild(userNode);
-                member.AppendChild(passNode);
-                root.AppendChild(member);
-                doc.Save(filePath);
-
-                return true;
+                captchaChars[i] = chars[random.Next(chars.Length)];
             }
-            catch (Exception ex)
-            {
-                // Log or handle the exception appropriately
-                return false;
-            }
+            return new string(captchaChars);
         }
     }
 }

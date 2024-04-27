@@ -15,7 +15,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 20px;
-            margin-bottom: 20px;
         }
 
         .service-card:hover {
@@ -57,7 +56,36 @@
                     </p>
                 </div>
             </div>
-            <!-- Add more service cards for other services if needed -->
+
+            <div class="col-md-6">
+                <div class="service-card">
+                    <h2 class="service-title">Word Filter</h2>
+                    <p class="service-description">
+                        Word Filter is a service that removes stop words from news text and returns only content words (the more significant words).<br />
+                        Returns a string of content words<br />
+                        Localhost URL of the service: http://webstrar114.fulton.asu.edu/page0/Service2.svc <br />
+                        Method Name: WordFilter(string siteText)<br />
+                        Input: string<br />
+                        Output: string of content words
+                    </p>
+                </div>
+            </div>
+        </div>
+            
+        <div class="row service-container">
+            <div class="col-md-6">
+                <div class="service-card">
+                    <h2 class="service-title">Top Ten Content Words</h2>
+                    <p class="service-description">
+                        Top Ten Content Words is a service that removes stop words from news text and returns the top ten most used content words, sorted from most to least used, separated by commas<br />
+                        Returns an array of most used content words<br />
+                        Localhost URL of the service: http://webstrar114.fulton.asu.edu/page0/Service3.svc <br />
+                        Method Name: topTen(string pageContents)<br />
+                        Input: string<br />
+                        Output: array of string (top ten most used content words)
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div class="button-container">

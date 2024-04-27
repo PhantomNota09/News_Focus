@@ -114,6 +114,7 @@
     </None>
     <Content Include="App_Data\staff.xml" />
     <Content Include="App_Data\members.xml" />
+    <Content Include="Captcha.aspx" />
     <Content Include="memberSignUp.aspx" />
     <Content Include="memberLogin.aspx" />
     <Content Include="StaffDashboard.aspx" />
@@ -225,6 +226,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Captcha.aspx.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.aspx.designer.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
     </Compile>
     <Compile Include="memberSignUp.aspx.cs">
       <DependentUpon>memberSignUp.aspx</DependentUpon>
